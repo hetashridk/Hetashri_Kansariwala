@@ -145,12 +145,15 @@ const Projects = () => {
 
         {/* The Tab structure remains identical */}
         <Tabs defaultValue="company" className="w-full">
-          <TabsList className="grid w-full grid-cols-4 max-w-md mx-auto mb-8">
+          <div className="overflow-x-auto md:flex md:items-center md:justify-center">
+
+          <TabsList className="flex w-max gap-2 px-2 mb-8">
             <TabsTrigger value="company">Company</TabsTrigger>
             <TabsTrigger value="government">Government</TabsTrigger>
             <TabsTrigger value="personal">Personal</TabsTrigger>
             <TabsTrigger value="other">Community</TabsTrigger>
           </TabsList>
+          </div>
 
           <TabsContent value="company">
             {renderProjects(companyProjects)}

@@ -52,7 +52,7 @@ const Hero = () => {
             </motion.div>
 
             <div className="space-y-4">
-              <h1 className="text-5xl lg:text-7xl font-bold">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold">
                 Hello, <br />
                 I'm <span className="text-primary">Hetashri Kansariwala</span>, <br />
                 a Professional <br />
@@ -75,14 +75,14 @@ const Hero = () => {
               </h1>
             </div>
 
-            <p className="text-xl text-muted-foreground max-w-xl">
+            <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-xl">
               Full Stack Developer specializing in building exceptional digital experiences with modern web technologies.
             </p>
 
             <div className="flex flex-wrap gap-4">
               <a href="#contact" >
               <Button size="lg" className="bg-primary hover:bg-primary/90">
-                <FaEnvelope className="mr-2" />
+                <FaEnvelope className="" />
                 Contact Me
               </Button>
               </a>

@@ -2,29 +2,103 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 const Experience = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
+  // Re-ordered experiences to be strictly chronological (most recent first)
+  // and added the new 'details' array for the accordion
   const experiences = [
-    {
-      period: "January 2025 - Presnt",
-      title: "Full Stack Developer",
-      company: "Freelance",
-      description: "Built custom web applications for few clients. Specialized in React, Node.js, and database design. Delivered projects on time and within budget."
-    },
     {
       period: "August 2025 - Present",
       title: "Junior Salesforce Developer",
       company: "EruditeWorks Private Limited",
-      description: "Developing a new internal data backup tool, primarily takes the backup/restore the records of salesforce in google drive using MySQL, Express.js and Salesforce."
+      description: "Promoted to a developer role, taking ownership of a new internal data backup tool. This full-stack application uses Node.js, MySQL, and Salesforce APIs to back up/restore critical org data to Google Drive. Also responsible for optimizing and maintaining the 'EW Sign' application.",
+      details: [
+        {
+          title: "Key Project",
+          text: "Internal Salesforce Data Backup & Restore Tool."
+        },
+        {
+          title: "Problem Solved",
+          text: "The company required a secure, off-platform solution to back up vital Salesforce data, mitigating data loss risks and providing a reliable restore mechanism independent of Salesforce's native tools."
+        },
+        {
+          title: "Biggest Challenge",
+          text: "The primary difficulty was efficiently handling large, asynchronous data exports from the Salesforce Bulk API. Processing these massive datasets and streaming them to Google Drive without exceeding server memory limits or hitting API rate limits was a significant architectural hurdle."
+        },
+        {
+          title: "Solution",
+          text: "I designed a queue-based system in Node.js to manage the asynchronous API jobs. By processing data in streams and chunks, the solution maintains a low memory footprint. I also implemented robust error handling and retry logic to ensure data integrity despite network or API interruptions."
+        },
+        {
+          title: "Overall Learning",
+          text: "This project provided deep insights into large-scale data integration, asynchronous processing in Node.js, and the nuances of Salesforce APIs. It reinforced the critical importance of resilient, memory-efficient system architecture."
+        }
+      ]
+    },
+    {
+      period: "January 2025 - Present",
+      title: "Full Stack Developer",
+      company: "Freelance",
+      description: "Building custom web applications for various clients. Specialized in creating full-stack solutions using React, Node.js, and MySQL, delivering responsive and scalable projects on time.",
+      details: [
+        {
+          title: "Key Project",
+          text: "Custom E-commerce & Portfolio Websites."
+        },
+        {
+          title: "Problem Solved",
+          text: "Clients needed high-performance, custom-built websites to move away from restrictive template-based platforms, allowing for unique features and better control over their online presence."
+        },
+        {
+          title: "Biggest Challenge",
+          text: "The main challenge was accurately scoping projects and translating non-technical client requirements into a concrete technical architecture (e.g., React frontend, Node.js API, and MySQL database design) while managing expectations."
+        },
+        {
+          title: "Solution",
+          text: "I developed a modular full-stack boilerplate that significantly sped up development time. This included building a secure Node.js backend for inventory/user management and integrating the Stripe API for payments, which could be customized per client."
+        },
+        {
+          title: "Overall Learning",
+          text: "Freelancing has been invaluable for honing my project management, client communication, and end-to-end development skills. I've learned to independently manage the entire project lifecycle, from initial design to final deployment."
+        }
+      ]
     },
     {
       period: "January 2025 - July 2025",
       title: "Salesforce Intern",
       company: "EruditeWorks Private Limited",
-      description: "Contributed to the digital signing tool, specifically building and deploying the dedicated Admin Portal using Next.js and integrating it with Express.js and MySQL to manage user roles and data. Also gained foundational experience in Salesforce, LWC, and Apex while assisting with the development of the main EW Sign user interface."
+      description: "Contributed to the 'EW Sign' digital signing tool, primarily by building and deploying its dedicated Admin Portal. This involved using Next.js for the frontend and integrating with an Express.js backend and MySQL database to manage user roles and data.",
+      details: [
+        {
+          title: "Key Project",
+          text: "'EW Sign' Digital Tool - Admin Portal."
+        },
+        {
+          title: "Problem Solved",
+          text: "The 'EW Sign' application needed a secure, internal admin portal to manage user accounts, permissions, and track document statuses, which was previously a manual process for the support team."
+        },
+        {
+          title: "Biggest Challenge",
+          text: "As my first major project, the primary challenge was rapidly learning the Next.js framework and understanding how to securely integrate it with an existing Express.js API and MySQL database, ensuring all data handling was correct and secure."
+        },
+        {
+          title: "Solution",
+          text: "I successfully developed and deployed several key components for the admin portal, focusing on building clean, reusable React components for the UI. I also assisted the senior team by developing LWC components for the main user-facing application."
+        },
+        {
+          title: "Overall Learning",
+          text: "This internship provided a strong foundation in full-stack development within a production environment. I gained practical, hands-on experience with the MERN stack (specifically Next.js) and was introduced to the Salesforce ecosystem, including LWC and Apex."
+        }
+      ]
     },
   ];
 
@@ -78,6 +152,29 @@ const Experience = () => {
                     </CardHeader>
                     <CardContent>
                       <p className="text-muted-foreground leading-relaxed">{exp.description}</p>
+                      
+                      {/* --- Accordion Start --- */}
+                      <Accordion type="single" collapsible className="w-full mt-4">
+                        <AccordionItem value="item-1" className="border-t border-primary/20">
+                          <AccordionTrigger className="text-primary hover:no-underline">
+                            Read more...
+                          </AccordionTrigger>
+                          <AccordionContent>
+                            <div className="space-y-4 pt-2">
+                              {exp.details.map((detail, i) => (
+                                <div key={i}>
+                                  <strong className="text-secondary">{detail.title}:</strong>
+                                  <p className="text-muted-foreground text-sm leading-relaxed mt-1">
+                                    {detail.text}
+                                  </p>
+                                </div>
+                              ))}
+                            </div>
+                          </AccordionContent>
+                        </AccordionItem>
+                      </Accordion>
+                      {/* --- Accordion End --- */}
+
                     </CardContent>
                   </Card>
                 </div>

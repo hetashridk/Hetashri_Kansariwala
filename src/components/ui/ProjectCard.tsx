@@ -173,12 +173,12 @@ const ProjectCard: React.FC<ProjectProps> = ({ project }) => {
             </motion.div>
 
             {/* Cursor blink effect */}
-            <motion.div
+            {/* <motion.div
               className="h-4 w-2 bg-white inline-block ml-1"
               initial={{ opacity: 0 }}
               animate={{ opacity: [0, 1, 0] }}
               transition={{ repeat: Infinity, duration: 1, repeatDelay: 0.2 }}
-            />
+            /> */}
           </code>
         </pre>
       </div>

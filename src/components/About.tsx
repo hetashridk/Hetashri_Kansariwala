@@ -80,7 +80,7 @@ const About = () => {
             className="relative"
           >
             <div className="glass-card p-8 rounded-2xl">
-              <div className="aspect-square rounded-xl bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
+              <div className="aspect-square rounded-xl bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center p-3 md:p-0">
                 <div className="text-center space-y-4">
                   <div className="text-8xl">👨‍💻</div>
                   <p className="text-xl font-semibold">Professional Developer</p>
