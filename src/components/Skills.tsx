@@ -20,7 +20,7 @@ const Skills = () => {
       skills: [
         { name: "React", icon: SiReact, color: "#61DAFB" },
         { name: "Next.js", icon: SiNextdotjs, color: "#000000" },
-        { name: "TypeScript", icon: SiTypescript, color: "#3178C6" },
+        // { name: "TypeScript", icon: SiTypescript, color: "#3178C6" },
         { name: "JavaScript", icon: SiJavascript, color: "#F7DF1E" },
         { name: "Tailwind CSS", icon: SiTailwindcss, color: "#06B6D4" },
         { name: "Salesforce", icon: SiSalesforce, color: "#019cdf" }
@@ -38,7 +38,7 @@ const Skills = () => {
       title: "Database",
       skills: [
         { name: "PostgreSQL", icon: SiPostgresql, color: "#4169E1" },
-        { name: "MongoDB", icon: SiMongodb, color: "#47A248" },
+      // { name: "MongoDB", icon: SiMongodb, color: "#47A248" },
         // { name: "Redis", icon: SiRedis, color: "#DC382D" },
       ]
     },
