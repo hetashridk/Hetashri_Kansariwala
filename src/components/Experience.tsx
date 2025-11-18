@@ -45,34 +45,6 @@ const Experience = () => {
       ]
     },
     {
-      period: "January 2025 - Present",
-      title: "Full Stack Developer",
-      company: "Freelance",
-      description: "Building custom web applications for various clients. Specialized in creating full-stack solutions using React, Node.js, and MySQL, delivering responsive and scalable projects on time.",
-      details: [
-        {
-          title: "Key Project",
-          text: "Custom E-commerce & Portfolio Websites."
-        },
-        {
-          title: "Problem Solved",
-          text: "Clients needed high-performance, custom-built websites to move away from restrictive template-based platforms, allowing for unique features and better control over their online presence."
-        },
-        {
-          title: "Biggest Challenge",
-          text: "The main challenge was accurately scoping projects and translating non-technical client requirements into a concrete technical architecture (e.g., React frontend, Node.js API, and MySQL database design) while managing expectations."
-        },
-        {
-          title: "Solution",
-          text: "I developed a modular full-stack boilerplate that significantly sped up development time. This included building a secure Node.js backend for inventory/user management and integrating the Stripe API for payments, which could be customized per client."
-        },
-        {
-          title: "Overall Learning",
-          text: "Freelancing has been invaluable for honing my project management, client communication, and end-to-end development skills. I've learned to independently manage the entire project lifecycle, from initial design to final deployment."
-        }
-      ]
-    },
-    {
       period: "January 2025 - July 2025",
       title: "Salesforce Intern",
       company: "EruditeWorks Private Limited",
