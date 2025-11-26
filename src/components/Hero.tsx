@@ -18,7 +18,8 @@ const Hero = () => {
       this.problemSolver &&
       this.skills.length >= 5
     );
-  }
+  },
+  currentlyLearning: RAG, Generative AI, Agentic AI
 };`;
 
   return (
@@ -148,6 +149,9 @@ const Hero = () => {
                   {"\n  "}
                   <span className="text-secondary">problemSolver:</span>{" "}
                   <span className="text-accent">true</span>,
+                  {"\n  "}
+                  <span className="text-secondary">learning:</span>{" "}
+                  <span className="text-accent">Full-Stack Gen-AI, LangChain, RAG Systems, Agents</span>,
                   {"\n  "}
                   <span className="text-secondary">hireable:</span>{" "}
                   <span className="text-primary">function</span>() {"{"}
