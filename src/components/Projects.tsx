@@ -86,7 +86,7 @@ const Projects = () => {
     {
       title: "PUAISO Membership System",
       description: "Comprehensive membership management system with payment processing, event management, and member analytics dashboard.",
-      tech: ["React.js", "Express.js", "Mongodb", "MySQL", "TailwindCSS"],
+      tech: ["React.js", "Express.js", "Mongodb", "TailwindCSS"],
       link: "https://puaiso.paruluniversity.ac.in/",
       github: "#",
       myRole: "Lead and FullStack Developer",
