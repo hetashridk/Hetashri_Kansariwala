@@ -17,7 +17,7 @@ const Experience = () => {
   // and added the new 'details' array for the accordion
   const experiences = [
     {
-      period: "February 2026 - Present",
+      period: "January 2026 - Present",
       title: "Full Stack and AI Developer",
       company: "Crosslinks Production House",
       description: "Working on high-performance web applications and production-level digital solutions, focusing on modern front-end frameworks and robust back-end integrations.",
