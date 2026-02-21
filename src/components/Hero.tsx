@@ -87,11 +87,11 @@ const Hero = () => {
                   Contact Me
                 </Button>
               </a>
-              {/* <Link to='https://drive.google.com/file/d/185GujXIzhWZyl5gBzFkN8j4Pw5eQKtSp/view?usp=sharing' target="_blank" >
+              <Link to='https://drive.google.com/file/d/1_HAU03jPKNCvxZCRsMxJzqnz9eUb-K5O/view?usp=sharing' target="_blank" >
                 <Button size="lg" variant="outline" className="border-secondary text-secondary hover:bg-secondary/10">
                   Get Resume
                 </Button>
-              </Link> */}
+              </Link>
             </div>
 
             <div className="flex gap-6 pt-4">
