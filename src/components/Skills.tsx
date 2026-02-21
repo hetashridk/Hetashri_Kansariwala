@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { 
-  SiReact, SiTypescript, SiJavascript, SiNodedotjs, 
+import {
+  SiReact, SiTypescript, SiJavascript, SiNodedotjs,
   SiPython, SiMongodb, SiPostgresql, SiDocker,
   SiAmazon, SiGit, SiTailwindcss, SiNextdotjs,
   SiExpress, SiRedis, SiFigma, SiFirebase,
@@ -38,7 +38,7 @@ const Skills = () => {
       title: "Database",
       skills: [
         { name: "PostgreSQL", icon: SiPostgresql, color: "#4169E1" },
-      // { name: "MongoDB", icon: SiMongodb, color: "#47A248" },
+        { name: "MongoDB", icon: SiMongodb, color: "#47A248" },
         // { name: "Redis", icon: SiRedis, color: "#DC382D" },
       ]
     },
@@ -82,22 +82,22 @@ const Skills = () => {
               className="space-y-6"
             >
               <h3 className="text-xl font-bold text-secondary">{category.title}</h3>
-              
+
               <div className="space-y-4">
                 {category.skills.map((skill, skillIndex) => (
                   <motion.div
                     key={skill.name}
                     initial={{ opacity: 0, x: -20 }}
                     animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
-                    transition={{ 
-                      duration: 0.4, 
-                      delay: categoryIndex * 0.1 + skillIndex * 0.05 
+                    transition={{
+                      duration: 0.4,
+                      delay: categoryIndex * 0.1 + skillIndex * 0.05
                     }}
                     className="glass-card p-4 rounded-lg hover:border-primary/50 transition-all duration-300 group"
                   >
                     <div className="flex items-center gap-3">
-                      <skill.icon 
-                        className="text-3xl transition-transform group-hover:scale-110" 
+                      <skill.icon
+                        className="text-3xl transition-transform group-hover:scale-110"
                         style={{ color: skill.color }}
                       />
                       <span className="font-medium">{skill.name}</span>

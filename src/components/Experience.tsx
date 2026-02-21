@@ -17,7 +17,47 @@ const Experience = () => {
   // and added the new 'details' array for the accordion
   const experiences = [
     {
-      period: "August 2025 - Present",
+      period: "February 2026 - Present",
+      title: "Full Stack and AI Developer",
+      company: "Crosslinks Production House",
+      description: "Working on high-performance web applications and production-level digital solutions, focusing on modern front-end frameworks and robust back-end integrations.",
+      details: [
+        {
+          title: "Role Focus",
+          text: "Full-stack development using modern technologies to build scalable production-ready applications."
+        },
+        {
+          title: "Production Environment",
+          text: "Collaborating with a creative team to deliver seamless digital experiences for various production house projects."
+        },
+        {
+          title: "Key Learning",
+          text: "Deepened expertise in production workflows and high-fidelity UI/UX implementations."
+        }
+      ]
+    },
+    {
+      period: "January 2026 - Present",
+      title: "Freelance Full Stack Developer",
+      company: "Self-Employed",
+      description: "Consulting with diverse clients to deliver custom web solutions, ranging from landing pages to complex web applications, specializing in React and Next.js.",
+      details: [
+        {
+          title: "Global Reach",
+          text: "Working with clients across different regions to provide tailored technical solutions."
+        },
+        {
+          title: "Project Management",
+          text: "Handling everything from initial requirement gathering to deployment and maintenance."
+        },
+        {
+          title: "Technical Stack",
+          text: "Leveraging the power of React, Next.js, and GenAI to build cutting-edge digital products."
+        }
+      ]
+    },
+    {
+      period: "August 2025 - January 2026",
       title: "Junior Salesforce Developer",
       company: "EruditeWorks Private Limited",
       description: "Promoted to a developer role, taking ownership of a new internal data backup tool. This full-stack application uses Node.js, MySQL, and Salesforce APIs to back up/restore critical org data to Google Drive. Also responsible for optimizing and maintaining the 'EW Sign' application.",
@@ -103,9 +143,8 @@ const Experience = () => {
                 initial={{ opacity: 0, y: 30 }}
                 animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
                 transition={{ duration: 0.5, delay: index * 0.2 }}
-                className={`flex items-center gap-8 ${
-                  index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
-                }`}
+                className={`flex items-center gap-8 ${index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
+                  }`}
               >
                 <div className="flex-1">
                   <Card className="glass-card border-primary/20 hover:border-primary/50 transition-all duration-300">
@@ -124,7 +163,7 @@ const Experience = () => {
                     </CardHeader>
                     <CardContent>
                       <p className="text-muted-foreground leading-relaxed">{exp.description}</p>
-                      
+
                       {/* --- Accordion Start --- */}
                       <Accordion type="single" collapsible className="w-full mt-4">
                         <AccordionItem value="item-1" className="border-t border-primary/20">

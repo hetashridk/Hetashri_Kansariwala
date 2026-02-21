@@ -23,7 +23,7 @@ const Hero = () => {
 };`;
 
   return (
-    <section 
+    <section
       id="home"
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
       style={{
@@ -33,7 +33,7 @@ const Hero = () => {
       }}
     >
       <div className="absolute inset-0 bg-background/90 backdrop-blur-sm"></div>
-      
+
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Column - Text Content */}
@@ -61,8 +61,8 @@ const Hero = () => {
                   sequence={[
                     'Full Stack Developer',
                     2000,
-                   // 'Freelancer',
-                   // 2000,
+                    // 'Freelancer',
+                    // 2000,
                     'Salesforce Developer',
                     2000
                     // 'AI Engineer',
@@ -82,20 +82,20 @@ const Hero = () => {
 
             <div className="flex flex-wrap gap-4">
               <a href="#contact" >
-              <Button size="lg" className="bg-primary hover:bg-primary/90">
-                <FaEnvelope className="" />
-                Contact Me
-              </Button>
+                <Button size="lg" className="bg-primary hover:bg-primary/90">
+                  <FaEnvelope className="" />
+                  Contact Me
+                </Button>
               </a>
-              <Link to='https://drive.google.com/file/d/185GujXIzhWZyl5gBzFkN8j4Pw5eQKtSp/view?usp=sharing' target="_blank" >
-              <Button size="lg" variant="outline" className="border-secondary text-secondary hover:bg-secondary/10">
-                Get Resume
-              </Button>
-              </Link>
+              {/* <Link to='https://drive.google.com/file/d/185GujXIzhWZyl5gBzFkN8j4Pw5eQKtSp/view?usp=sharing' target="_blank" >
+                <Button size="lg" variant="outline" className="border-secondary text-secondary hover:bg-secondary/10">
+                  Get Resume
+                </Button>
+              </Link> */}
             </div>
 
             <div className="flex gap-6 pt-4">
-              <a href="https://github.com/hetashridk" target="_blank" rel="noopener noreferrer" 
+              <a href="https://github.com/hetashridk" target="_blank" rel="noopener noreferrer"
                 className="text-foreground hover:text-primary transition-colors">
                 <FaGithub size={28} />
               </a>
@@ -139,7 +139,8 @@ const Hero = () => {
                   <span className="text-primary">'Next.js'</span>,{" "}
                   <span className="text-primary">'Node.js'</span>,{" "}
                   <span className="text-primary">'TailwindCSS'</span>,{" "}
-                  <span className="text-primary">'MySql'</span>],
+                  <span className="text-primary">'MySql'</span>,{" "}
+                  <span className="text-primary">'MongoDB'</span>],
                   {"\n  "}
                   <span className="text-secondary">hardworker:</span>{" "}
                   <span className="text-accent">true</span>,
