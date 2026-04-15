@@ -1,103 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
+/*
+  "Morning Garden" — a calm, light, soothing design system.
+  Colors: warm cream, sage green, dusty rose, soft violet.
+  Philosophy: breathe. slow down. be present.
 */
 
 @layer base {
   :root {
-    --background: 240 20% 6%;
-    --foreground: 210 40% 98%;
+    /* ── Backgrounds ── */
+    --background: 42 35% 96%;          /* warm parchment cream */
+    --foreground: 220 22% 20%;         /* deep ocean slate */
 
-    --card: 240 18% 8%;
-    --card-foreground: 210 40% 98%;
+    --card: 0 0% 100%;                 /* pure white */
+    --card-foreground: 220 22% 20%;
 
-    --popover: 240 18% 8%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 22% 20%;
 
-    --primary: 328 100% 56%;
-    --primary-foreground: 210 40% 98%;
+    /* ── Brand Colors ── */
+    --primary: 168 48% 34%;            /* sage forest green */
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 188 100% 50%;
-    --secondary-foreground: 240 20% 6%;
+    --secondary: 338 48% 50%;          /* dusty rose */
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 240 15% 15%;
-    --muted-foreground: 215 20% 65%;
+    --muted: 220 20% 93%;              /* whisper gray */
+    --muted-foreground: 220 14% 46%;   /* soft slate */
 
-    --accent: 142 76% 50%;
-    --accent-foreground: 240 20% 6%;
+    --accent: 258 44% 56%;             /* soft violet */
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 4 72% 52%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 240 15% 15%;
-    --input: 240 15% 15%;
-    --ring: 328 100% 56%;
+    --border: 220 20% 88%;             /* feather border */
+    --input: 220 20% 93%;
+    --ring: 168 48% 34%;
 
-    --radius: 0.75rem;
-    
-    --code-bg: 240 20% 10%;
-    --code-pink: 328 100% 56%;
-    --code-cyan: 188 100% 50%;
-    --code-green: 142 76% 50%;
-    --code-yellow: 48 100% 50%;
-    --code-purple: 280 100% 70%;
+    --radius: 1rem;
 
-    --sidebar-background: 0 0% 98%;
+    /* ── Section tints ── */
+    --sage-tint: 168 35% 95%;
+    --rose-tint: 338 35% 96%;
+    --violet-tint: 258 35% 96%;
 
-    --sidebar-foreground: 240 5.3% 26.1%;
+    /* ── Code editor (light VS Code style) ── */
+    --code-bg: 220 20% 97%;
+    --code-keyword: 258 60% 48%;       /* violet for const/function */
+    --code-string: 338 55% 44%;        /* dusty rose for strings */
+    --code-value: 168 55% 34%;         /* sage for true/false */
+    --code-property: 210 70% 38%;      /* blue for keys */
 
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
-  .dark {
-    --background: 240 20% 6%;
-    --foreground: 210 40% 98%;
-
-    --card: 240 18% 8%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 240 18% 8%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 328 100% 56%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 188 100% 50%;
-    --secondary-foreground: 240 20% 6%;
-
-    --muted: 240 15% 15%;
-    --muted-foreground: 215 20% 65%;
-
-    --accent: 142 76% 50%;
-    --accent-foreground: 240 20% 6%;
-
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 240 15% 15%;
-    --input: 240 15% 15%;
-    --ring: 328 100% 56%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-background: 42 35% 96%;
+    --sidebar-foreground: 220 22% 20%;
+    --sidebar-primary: 168 48% 34%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-accent: 220 20% 93%;
+    --sidebar-accent-foreground: 220 22% 20%;
+    --sidebar-border: 220 20% 88%;
+    --sidebar-ring: 168 48% 34%;
   }
 }
 
@@ -106,40 +72,166 @@ All colors MUST be HSL.
     @apply border-border;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     @apply bg-background text-foreground;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-feature-settings: 'cv11', 'ss01';
+    -webkit-font-smoothing: antialiased;
   }
-  
+
   code, pre {
-    font-family: 'Fira Code', 'Courier New', monospace;
+    font-family: 'Fira Code', 'JetBrains Mono', 'Courier New', monospace;
+  }
+
+  ::selection {
+    background: hsl(168 48% 34% / 0.15);
+    color: hsl(168 48% 24%);
   }
 }
 
 @layer utilities {
+
+  /* ── Gradient text: sage → rose → violet ── */
   .gradient-text {
     @apply bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent;
   }
-  
+
+  /* ── Gradient text: gentle sage → rose ── */
+  .gradient-text-soft {
+    @apply bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent;
+  }
+
+  /* ── Frosted glass card ── */
+  .glass-card {
+    background: hsl(0 0% 100% / 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid hsl(220 20% 88% / 0.8);
+    box-shadow: 0 4px 24px -4px hsl(220 20% 60% / 0.08),
+                0 1px 6px -1px hsl(220 20% 60% / 0.06);
+  }
+
+  /* ── Section sage tint ── */
+  .section-sage {
+    background: hsl(168 35% 95%);
+  }
+
+  /* ── Section rose tint ── */
+  .section-rose {
+    background: hsl(338 35% 96%);
+  }
+
+  /* ── Section violet tint ── */
+  .section-violet {
+    background: hsl(258 35% 97%);
+  }
+
+  /* ── Gradient border (updated for light) ── */
   .gradient-border {
     position: relative;
     background: hsl(var(--card));
     border-radius: var(--radius);
   }
-  
+
   .gradient-border::before {
     content: '';
     position: absolute;
     inset: 0;
     border-radius: var(--radius);
-    padding: 2px;
+    padding: 1.5px;
     background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)));
     -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
   }
-  
-  .glass-card {
-    @apply bg-card/50 backdrop-blur-xl border border-border/50;
+
+  /* ── Soft hover lift ── */
+  .hover-lift {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 32px -8px hsl(168 48% 34% / 0.14),
+                0 4px 12px -4px hsl(168 48% 34% / 0.1);
+  }
+
+  /* ── Decorative orb blobs ── */
+  .orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(60px);
+    pointer-events: none;
+  }
+
+  .orb-sage {
+    background: hsl(168 55% 60% / 0.18);
+  }
+
+  .orb-rose {
+    background: hsl(338 55% 65% / 0.14);
+  }
+
+  .orb-violet {
+    background: hsl(258 55% 65% / 0.12);
+  }
+
+  /* ── Timeline line ── */
+  .timeline-line {
+    background: linear-gradient(
+      to bottom,
+      hsl(var(--primary)),
+      hsl(var(--secondary)),
+      hsl(var(--accent))
+    );
+  }
+
+  /* ── Skill pill ── */
+  .skill-pill {
+    @apply bg-white border border-border rounded-xl p-4 shadow-sm hover:shadow-md transition-all duration-300;
+  }
+
+  .skill-pill:hover {
+    border-color: hsl(var(--primary) / 0.4);
+    transform: translateY(-2px);
+  }
+
+  /* ── Section header underline ── */
+  .section-underline {
+    height: 3px;
+    width: 56px;
+    background: linear-gradient(90deg, hsl(var(--primary)), hsl(var(--secondary)));
+    border-radius: 9999px;
+    margin: 0 auto;
+  }
+
+  /* ── Badge ── */
+  .tag-badge {
+    @apply text-xs px-2.5 py-1 rounded-full font-medium;
+    background: hsl(168 48% 34% / 0.08);
+    color: hsl(168 48% 28%);
+    border: 1px solid hsl(168 48% 34% / 0.2);
+  }
+
+  /* ── Custom scrollbar ── */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--background));
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--primary) / 0.3);
+    border-radius: 9999px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--primary) / 0.5);
   }
 }

@@ -71,6 +71,18 @@ const Projects = () => {
     }
   ];
 
+  const freelanceProjects = [
+    {
+      title: "Crosslinks AI",
+      description: "Developed the website for Crosslinks AI — an AI consultation and training studio that helps founders and business teams integrate AI into real workflows. The site covers their services: AI Consultation, Team Training, 1:1 AI Coaching, and GenAI Workshops. Built with modern web technologies, clean UI, fast performance, and fully responsive. Currently working here as Full Stack & AI Developer.",
+      tech: ["React.js", "Tailwind CSS"],
+      link: "https://www.crosslinks.ai/",
+      // github: "https://github.com/hetashridk/Next-Events",
+      myRole: "FullStack Developer",
+      gradient: "from-yellow-500 to-orange-600"
+    },
+  ]
+
 
 
   const otherProjects = [
@@ -93,6 +105,7 @@ const Projects = () => {
       gradient: "from-pink-500 to-rose-600"
     }
   ];
+
 
 
   // Updated render function to use ProjectCard
@@ -126,21 +139,25 @@ const Projects = () => {
   );
 
   return (
-    <section id="projects" className="py-20 px-4">
+    <section id="projects" className="py-24 px-4 bg-white">
       <div className="container mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
-          className="text-center mb-12"
+          className="text-center mb-14"
         >
+          <p className="text-sm font-medium text-secondary/80 tracking-widest uppercase mb-3">
+            What I've built
+          </p>
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             My <span className="gradient-text">Projects</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
             A collection of my professional, personal, and community projects
           </p>
+          <div className="section-underline mt-5" />
         </motion.div>
 
         {/* The Tab structure remains identical */}
@@ -152,6 +169,7 @@ const Projects = () => {
             <TabsTrigger value="government">Government</TabsTrigger>
             <TabsTrigger value="personal">Personal</TabsTrigger>
             <TabsTrigger value="other">Community</TabsTrigger>
+            <TabsTrigger value="freelance">Freelance</TabsTrigger>
           </TabsList>
           </div>
 
@@ -169,6 +187,10 @@ const Projects = () => {
 
           <TabsContent value="other">
             {renderProjects(otherProjects)}
+          </TabsContent>
+
+          <TabsContent value="freelance">
+            {renderProjects(freelanceProjects)}
           </TabsContent>
         </Tabs>
       </div>
